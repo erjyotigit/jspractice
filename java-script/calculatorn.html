@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling.css">
+    <title>Calculator</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <fieldset id="container">
+            Calculator
+            
+            <form name="calculator">
+                <input type="text" id="display" name="display">
+                <br>
+
+                <input type="button" class="digits" value="7" onclick="btndigit_click(this)" id="btn7">
+                <input type="button" class="digits" value="8" onclick="btndigit_click(this)" id="btn8">
+                <input type="button" class="digits" value="9" onclick="btndigit_click(this)" id="btn9">
+
+                <input type="button" class="operators" value="+" onclick="btnoperator_click(this)">
+
+                <br>
+
+                <input type="button" class="digits" value="4" onclick="btndigit_click(this)" id="btn4">
+                <input type="button" class="digits" value="5" onclick="btndigit_click(this)" id="btn5">
+                <input type="button" class="digits" value="6" onclick="btndigit_click(this)" id="btn6">
+
+                <input type="button" class="operators" value="-" onclick="btnoperator_click(this)">
+                <br>
+
+                <input type="button" class="digits" value="1" onclick="btndigit_click(this)" id="btn1">
+                <input type="button" class="digits" value="2" onclick="btndigit_click(this)" id="btn2">
+                <input type="button" class="digits" value="3" onclick="btndigit_click(this)" id="btn3">
+
+                <input type="button" class="operators" value="X" onclick="btnoperator_click(this)">
+                <br>
+
+                <input type="button" class="clear" id="clearbutton" value="C" onclick="btnclear_click()">
+                <input type="button" class="digits" value="0" onclick="btndigit_click(this)" id="btn0">
+                <input type="button" class="operators" value="=" onclick="btneq_click()">
+                <input type="button" class="operators" value="/" onclick="btnoperator_click(this)">
+                
+                <br>
+
+            </form>
+        </fieldset>
+    </div>
+    
+    
+
+    <script>
+        var n1,n2,r;
+        var op;
+
+        
+        function btndigit_click(btn)
+        {
+            var x=document.getElementById("display");
+            x.value+=btn.value; 
+        }
+
+        function btnoperator_click(btn)
+        {
+            var x=document.getElementById("display");
+            n1=Number(x.value);
+            op=btn.value;
+            x.value="";
+            
+        }
+
+        function btneq_click()
+        {
+            var x=document.getElementById("display");
+            n2=Number(x.value);
+
+            if(op=="+")
+            {
+                r=n1+n2;     
+            }
+            else if(op=="-")
+            {
+                r=n1-n2;
+            }
+            else if(op=="X")
+            {
+                r=n1*n2;
+            }
+            else if(op=="/")
+            {
+                r=n1/n2;
+            }
+
+            x.value=r;
+        }
+
+        function btnclear_click()
+        {
+            document.getElementById("display").value="";
+        }
+    </script>
+    
+</body>
+</html>

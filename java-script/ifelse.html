@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If else demo</title>
+    
+</head>
+<body>
+    <!--
+        as we know program is a solution of problem and a problem can not solve without decision
+        to take decision we need decision control statements in JS
+        if(condition)
+        {
+            execute this block if condition goes to true
+        }
+        else
+        {
+            execute this if condition goes to false
+        }
+
+        1. enter sale price and cost price of a book print profit or loss 
+        2. enter 2 nos print which one is biggest
+        if(condition)
+        {
+            if(condition)
+            {
+            execute this block if condition goes to true
+            }
+            else
+            {
+
+            }
+        }
+        else
+        {
+            if(condition)
+            {
+            execute this if condition goes to false
+            }
+            else
+            {
+                ....
+            }
+        }
+        3. enter age of a person and check eligibility for lic criteria age 18-45 
+        4. biggest between 3 nos
+    -->
+    <table border="1">
+        <tr>
+            <th>Enter age of Ram</th>
+            <td><input type="text" id="txtram"/></td>
+        </tr>
+        <tr>
+            <th>Enter age of Sham</th>
+            <td><input type="text" id="txtsham"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;"><input type="button" id="btnverify" value="Click here to verify"/></td>
+        </tr>
+        <tr><td colspan="2"><p id="result"></p></td></tr>
+    </table>
+    <script>
+        
+        function btnverify_click()
+        {
+            var ramage=Number(document.getElementById("txtram").value);
+            var shamage= Number(document.getElementById("txtsham").value);
+            if(ramage>shamage)
+            {
+                document.getElementById("result").innerHTML="Ram is youngest";
+            }
+            else{
+                document.getElementById("result").innerHTML="Sham is youngest";
+            }
+            if(ramage>=18)
+            {
+                if(ramage<=45)
+                {
+                    document.getElementById("result").innerHTML="Ram is eligible for lic";
+                }
+                else{
+                    document.getElementById("result").innerHTML="Ram is not eligible for lic";
+                    
+                }
+            }
+            else
+            {
+                document.getElementById("result").innerHTML="Ram is not eligible for lic";
+                   
+            }
+
+            if(shamage>=18 && shamage<=45)
+            {
+                document.getElementById("result").innerHTML="Sham is  eligible for lic";
+                   
+            }
+            else{
+                document.getElementById("result").innerHTML="Sham is not eligible for lic";
+                   
+            }
+        }
+        var x=document.getElementById("btnverify");
+        x.addEventListener("click",btnverify_click);
+
+    </script>
+</body>
+</html>

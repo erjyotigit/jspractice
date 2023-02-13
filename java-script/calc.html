@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>calc</title>
+    <style>
+        #a{
+            font-size: 50px;
+            background-color:black;
+            color: aliceblue;
+            padding: 12px 30px;
+
+        }
+        #box{
+            height: 100px;
+            width: 375px;
+            border:solid black 3px;
+        }
+        #main{
+            background-color: darkgray;
+            width: 405px;
+        }
+     </style>
+</head>
+<body>
+    <h1>calculator</h1>
+    <div class="container" id="main">
+    
+    <div id="sub">
+
+    <input type="text" id="txtnum">
+
+
+    <br>
+    <input type="button" name="" id="btnc" value="C" style="padding: 10px 26px; font-size: 50px;">
+    <input type="button" name="" id="" value="()" style="padding: 10px 27px; font-size: 50px;">
+    <input type="button" onclick="btneq_click()" name="" id="btneq" value="=" style="padding: 10px 29px; font-size: 50px;">
+    <input type="button" onclick="btnop_click(this)" name="" id="btndiv" value="/" style="padding: 12px 34px;font-size: 47px;">
+    <br>
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn7" value="7">
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn8" value="8">
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn9" value="9">
+    <input type="button" onclick="btnop_click(this)" name="" id="btnp" value="*" style="padding: 10px 30px;font-size: 52px;">
+    <br>
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn4" value="4">
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn5" value="5">
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn6" value="6">
+    <input type="button" onclick="btnop_click(this)" name="" id="btnm" value="-" style="padding: 12px 32px; font-size: 50px;">
+    <br>
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn1" value="1">
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn2" value="2">
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn3" value="3">
+    <input type="button" onclick="btnop_click(this)" name="" id="btnadd" value="+" style="padding: 12px 26px; font-size: 50px;">
+    <br>
+    <input type="button" name="" id="" value="^" style="padding: 10px 32px; font-size: 50px;">
+
+
+
+    <input type="button" onclick="btnDigit_Click(this)" name="" id="btn0" value="0">
+    <input type="button" name="" id="btndot" value="." style="padding: 10px 37px; font-size: 52px;">
+    <input type="button" name="" id="btnper" value="%" style="padding: 12px 19px; font-size: 50px;">
+</div>
+</div>
+<script>
+    var n1,n2,r;
+    var op;
+ function btnDigit_Click(btn)
+ {
+    var x=document.getElementById("txtnum");
+    x.value+=btn.value; // compund statement
+
+ }
+ function btnop_click(btn)
+ {
+    var x=document.getElementById("txtnum");
+    n1=Number(x.value);
+    op=btn.value;
+    x.value="";
+ }
+ function btneq_click()
+ {
+    var x=document.getElementById("txtnum");
+    n2=Number(x.value);
+
+    if(op=="+")
+    {
+       r=n1+n2;     
+    }
+    else if(op=="-")
+    {
+        r=n1-n2;
+    }
+
+    x.value=r;
+ }
+
+</script>
+</body>
+</html>

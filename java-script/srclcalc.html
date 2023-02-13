@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <script>
+        var num1;
+        var num2;
+        var r;
+        var op;
+        var mem; // step 1
+        function btndigit_click(btn)  // 0-9 digit 
+        {
+            document.getElementById("txtnum").value=document.getElementById("txtnum").value+btn.value;
+        }
+        function btnop_click(btn)  // code +, -, *, /
+        {
+            num1=Number(document.getElementById("txtnum").value);
+            document.getElementById("txtnum").value="";
+            op=btn.value;
+            console.log("Num1=" +  num1 + " op=" + op);
+        }
+        function btneq_click()
+        {
+            num2=Number(document.getElementById("txtnum").value);
+            if(op=="+")
+            {
+                r=num1+num2;
+            }
+            else if (op=="-")
+            {
+                r=num1-num2;
+            }
+            else if (op=="/")
+            {
+                r=num1/num2;
+            }
+            else if (op=="*")
+            {
+                r=num1*num2;
+            }
+            document.getElementById("txtnum").value=r;
+        }
+        function btnbackspace_click()
+        {
+           var str=document.getElementById("txtnum").value;
+           var txtlen=str.length;
+           if(txtlen>0)
+           {
+           str=str.substr(0,txtlen-1);
+           document.getElementById("txtnum").value=str;
+           }
+           else
+           {
+               alert("nonthing to delete");
+           }
+        }
+        function btnc_click()
+        {
+            num1=0;
+            num2=0;
+            document.getElementById("txtnum").value="";
+        }
+        function btnce_click()
+        {
+            num2=0;
+            document.getElementById("txtnum").value="";
+        }
+        function btndot_click()
+        {
+            var str=document.getElementById("txtnum").value;
+           
+            if(str.indexOf(".")==-1)   
+            {
+            document.getElementById("txtnum").value+=".";
+            }
+        }
+        function btnpm_click()
+        {
+            num1=Number(document.getElementById("txtnum").value);
+            r=num1*-1;
+            document.getElementById("txtnum").value=r;
+        }
+        function btn_sqrt()
+        {
+            num1=Number(document.getElementById("txtnum").value);
+            r=Math.sqrt(num1);
+            document.getElementById("txtnum").value=r;
+        }
+        function btn_percentage()
+        {
+            num2=Number(document.getElementById("txtnum").value);
+            r=num1*num2/100;
+            document.getElementById("txtnum").value=r;
+        }
+        function btnMS_click() //MS
+        {
+            mem=Number(document.getElementById("txtnum").value);
+            document.getElementById("txtmem").value="M";
+        }
+        function btnMR_click()
+        {
+            document.getElementById("txtnum").value=mem;
+        }
+        function btnMP_click()
+        {
+            mem=mem+Number(document.getElementById("txtnum").value);
+        }
+        function btnMC_click()
+        {
+            mem=0;
+            document.getElementById("txtmem").value="";
+            document.getElementById("txtnum").value="";
+        }
+        function btnopclear_click()
+        {
+            op=0;
+            document.getElementById("txtnum").value=btnop_click(btn);
+        }
+    </script>
+</head>
+<body>
+    <h1>calculator</h1>
+    <table>
+        <tr>
+            <td colspan="6"><input id="txtnum" type="text" /></td>
+           
+            
+        </tr>
+        <tr>
+            <td><input id="txtmem" type="text" style="width: 10px;" readonly /></td>
+            <td colspan="2"><input id="btnBackspace" type="button" value="Backspace" onclick="btnbackspace_click()" style="color: red;" /></td>
+            <td colspan="2"><input id="btnce" type="button" value="CE" onclick="btnce_click()" style="color: red;" /></td>
+            <td><input id="btnc" type="button" value="C" onclick="btnc_click()" style="color: red;" /></td>
+            
+        </tr>
+        <tr>
+            <td><input id="btnmc" type="button" value="MC" style="color: red;" onclick="btnMC_click()" /></td>
+            <td><input id="btn7" type="button" value="7" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btn8" type="button" value="8" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btn9" type="button" value="9" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btndiv" type="button" value="/" style="color: red;"  onclick="btnop_click(this)" /></td>
+            <td><input id="btnsqrt" type="button" value="sqrt" style="color: blue;" onclick="btn_sqrt()" /></td>
+            
+        </tr>
+        <tr>
+            <td><input id="btnmr" type="button" value="MR" style="color: red;" onclick="btnMR_click()" /></td>
+            <td><input id="btn4" type="button" value="4" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btn5" type="button" value="5" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btn6" type="button" value="6" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btnpro" type="button" value="*" style="color: red;" onclick="btnop_click(this)" /></td>
+            <td><input id="btnper" type="button" value="%" style="color: blue;" onclick="btn_percentage()" /></td>
+            
+        </tr>
+        <tr>
+            <td><input id="btnms" type="button" value="MS" style="color: red;" onclick="btnMS_click()" /></td>
+            <td><input id="btn1" type="button" value="1" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btn2" type="button" value="2" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btn3" type="button" value="3" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btnminus" type="button" value="-" style="color: red;" onclick="btnop_click(this)" /></td>
+            <td><input id="btn1byx" type="button" value="1/x" style="color: blue;" /></td>
+            
+        </tr>
+        <tr>
+            <td><input id="btnmp" type="button" value="M+" style="color: red;" onclick="btnMP_click()"/></td>
+            <td><input id="btn0" type="button" value="0" style="color: blue;" onclick="btndigit_click(this)" /></td>
+            <td><input id="btnpm" type="button" value="+/-" style="color: blue;" onclick="btnpm_click()" /></td>
+            <td><input id="btndot" type="button" value="." style="color: blue;" onclick="btndot_click()" /></td>
+            <td><input id="btnplus" type="button" value="+" style="color: red;" onclick="btnop_click(this)" /></td>
+            <td><input id="btnequal" type="button" value="=" style="color: red;" onclick="btneq_click()" /></td>
+            <td><input id="btnopc" type="button" value="CO" style="color: red;" onclick="btnopclear_click()" /></td>
+            
+        </tr>
+    </table>
+</body>
+</html>

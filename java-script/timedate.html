@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #watch {
+			font-size: 100px;
+            color:#fafbfc;
+            background-color: black;
+			width: 500px;
+			margin: 100px;
+			text-align: center;
+			border: 5px solid blue;
+			border-radius: 40px;
+            
+		}  
+    </style>
+</head>
+<body>
+    <h1>Digital Watch</h1>
+   <div id="watch"><span id="i1"></span> : <span id="i2"></span> : <span id="i3"></span></div>
+
+  
+        <script>
+            function time(){
+                var a=new Date();
+                var hour=a.getHours();
+                var min=a.getMinutes();
+                var sec=a.getSeconds();
+                document.getElementById('i1').innerHTML=hour;
+                document.getElementById('i2').innerHTML=min;
+                document.getElementById('i3').innerHTML=sec;
+            }
+            time();
+            setInterval(time,1000);
+        </script>
+    
+    
+    
+
+
+
+   
+</html>

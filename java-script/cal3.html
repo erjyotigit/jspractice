@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+   <style>
+    #ans{
+        background-color: black;
+        color: aliceblue;
+        border-radius: 20px;
+        height: 100px;
+        width: 400px;
+        justify-items: left;
+
+    }
+    #btn{
+        padding: 20px 40px;
+        border-radius: 30px;
+    }
+   </style>
+</head>
+<body>
+    <div class="container">
+    <form name="form1" action="">
+       
+        <input id="ans" type="text">
+        
+        <br>
+        <input type="button" id="btn" value="C" onclick="form1.ans.value=''" >
+        <input type="button" id="btn" value="()" onclick="form1.ans.value+='()'" >
+        <input type="button" id="btn" value="%" onclick="form1.ans.value+='%'" >
+        <input type="button" id="btn" value="/" onclick="form1.ans.value+='/'" >
+        <br> 
+        <input type="button" id="btn" value="7" onclick="form1.ans.value+='7'" >
+        <input type="button" id="btn" value="8" onclick="form1.ans.value+='8'" >
+        <input type="button" id="btn" value="9" onclick="form1.ans.value+='9'" >
+        <input type="button" id="btn" value="X" onclick="form1.ans.value+='*'" >
+        <br> 
+        <input type="button" id="btn" value="4" onclick="form1.ans.value+='4'" >
+        <input type="button" id="btn" value="5" onclick="form1.ans.value+='5'" >
+        <input type="button" id="btn" value="6" onclick="form1.ans.value+='6'" >
+        <input type="button" id="btn" value="-" onclick="form1.ans.value+='-'" >
+        <br> 
+        <input type="button" id="btn" value="1" onclick="form1.ans.value+='1'" >
+        <input type="button" id="btn" value="2" onclick="form1.ans.value+='2'" >
+        <input type="button" id="btn" value="3" onclick="form1.ans.value+='3'" >
+        <input type="button" id="btn" value="+" onclick="form1.ans.value+='+'" >
+        <br> 
+        <input type="button" id="btn" value="." onclick="form1.ans.value+='.'" >
+        <input type="button" id="btn" value="0" onclick="form1.ans.value+='0'" >
+        <input type="button" id="btn" value="^" onclick="form1.ans.value+='^'" >
+        <input type="button" id="btn" value="=" onclick="form1.ans.value=eval(form1.ans.value)" >
+
+
+    </form>
+    </div>
+
+</body>
+</html>

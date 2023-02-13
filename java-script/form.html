@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en"><content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    
+        <label for="">First Name</label><input type="text" id="finame">
+        <label for="">Last Name</label><input type="text" id="lname">
+        <br>
+        <label for="">FatherName</label><input type="text" id="fname">
+        <br>
+        <label for="">Mother Name</label><input type="text" id="mname">
+        <br>
+        <label for="">Contact</label><input type="text" id="cont">
+        <label for="">Alternate No.</label><input type="text" id="alno">
+        <br>
+        <label for="">Gender</label>
+        <br>
+        <input onclick="checkgender()" type="radio" name="Gender" id="gender">Male
+        <input type="radio" name="Gender" id="gender">Female
+        <br>
+        <label for="">Address</label><input type="text" id="address"><br>
+        <br>
+        <label for="">Qualification</label><br>
+        <input type="checkbox" id="qualify">Metrix
+        <input type="checkbox" id="qualify">12th
+        <input type="checkbox" id="qualify">Diploma
+        <input type="checkbox" id="qualify">Graduation
+        <input type="checkbox" id="qualify">Post Graduation
+        <br>
+        <label for="">D.O.B</label>
+        <input type="text" id="dob">
+        <br>
+        <label for="">E-mail</label></span>
+        <input type="email" id="email">
+        <br>
+        <label for="">Password</label>
+        <input type="password" id="pw">
+        <br>
+        <label for="">Web Language Known</label>
+        <select name="web_language" id="web">
+        <option value="">Java</option>
+        <option value="">C</option>
+        <option value="">Python</option>
+        <option value="">Css</option>
+        </select>
+        <br>
+        <input type="submit" onclick="submit()" value="submit">
+        <br><br><br>
+    
+    <div id="table">
+    <table border="2">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>Contact</th>
+            <th>Alternate No.</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Qualification</th>
+            <th>D.O.B</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Web Language</th>
+
+        </tr>
+        <tr id="data">
+
+        </tr>
+    </table>
+</div>
+<script>
+    function checkgender(){
+        
+       var gender= document.getElementById("gender");
+       alert(gend
+       var selectgender="";
+       for (let index = 0; index <=  gender.length; index++) {
+        
+        if(gender[index].checked){
+            var selectgender=gender[index].value;
+            
+        }
+        //alert(selectgender);
+        
+       }
+    }
+    function submit(){
+        var Firstname=document.getElementById("finame").value;
+        var Lastname=document.getElementById("lname").value;
+        var Fathername=document.getElementById("fname").value;
+        var Mothername=document.getElementById("mname").value;
+        var Contact=document.getElementById("cont").value;
+        var Alterno=document.getElementById("alno").value;
+        var Gender=document.getElementById("gender").che;
+        var Address=document.getElementById("address").value;
+        var Qualification=document.getElementById("qualify").value;
+        var Dob=document.getElementById("dob").value;
+        var email=document.getElementById("email").value;
+        var password=document.getElementById("pw").value;
+        var weblang=document.getElementById("web").value;
+        //var head="";
+        // head+="<tr><th>FIRST NAME</th><th>LAST NAME</th><th>FATHER NAME</th><th>MOTHER NAME</th><th>CONTACT</th><th>ALTERNATE NO.</th><th>GENDER</th><th>ADDRESS</th><th>QUALIFICATION</th><th>D.O.B</th><th>EMAIL</th><th>WEB LANGUAGE</th></tr>";
+        //document.getElementById("data").innerHTML=head;
+        
+        var mark="";
+        mark+=`<td>${Firstname}</td> <td>${Lastname}</td> <td>${Fathername}</td><td>${Mothername}</td><td>${Contact}</td><td>${Alterno}</td> <td>${Gender}</td><td>${Address}</td> <td>${Qualification}</td> <td>${Dob}</td> <td>${email}</td> <td>${password}</td> <td>${weblang}</td>`;
+
+        document.getElementById("data").innerHTML=mark;
+    }
+
+</script>
+    
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

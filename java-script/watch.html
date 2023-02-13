@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 ><span id="h1"></span> <span id="h2"></span> <span id="h3"></span></h2>
+    <p id="date"></p>
+   
+    <script>
+        function time(){
+    var a=new Date();
+    var hour=a.getHours();
+    var min=a.getMinutes();
+
+    var sec=a.getSeconds();
+    var date=a.getDate();
+    var month=a.getMonth();
+    var year=a.getFullYear();
+    var day=a.getDay();
+    var myday="";
+    if(day==0){
+
+
+    }
+var newmonth=month+1;
+
+
+    document.getElementById('date').innerHTML=date +'/'+newmonth+'/'+'/'+year;
+    document.getElementById('h1').innerHTML=hour;
+    document.getElementById('h2').innerHTML=min;
+    document.getElementById('h3').innerHTML=sec;
+        }
+        time();
+        setInterval(time,1000);
+
+
+
+    </script>
+       
+</body>
+</html>

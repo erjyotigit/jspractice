@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+        #a{
+            font-size: 50px;
+            background-color:black;
+            color: aliceblue;
+            padding: 12px 30px;
+
+        }
+        #box{
+            height: 100px;
+            width: 375px;
+            border:solid black 3px;
+        }
+        #main{
+            background-color: darkgray;
+            width: 405px;
+        }
+     </style>
+</head>
+<body>
+    <h1>calculator</h1>
+    <div class="container" id="main">
+        <div id="sub">
+
+    <input type="text" id="box">
+
+
+    <br>
+    <input type="button" name="" id="" value="C" style="padding: 10px 26px; font-size: 50px;">
+    <input type="button" name="" id="" value="()" style="padding: 10px 27px; font-size: 50px;">
+    <input type="button" name="" id="" value="=" style="padding: 10px 29px; font-size: 50px;">
+    <input type="button" name="" id="b" value="/" style="padding: 12px 34px;font-size: 47px;">
+    <br>
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="7">
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="8">
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="9">
+    <input type="button" name="" id="b" value="*" style="padding: 10px 30px;font-size: 52px;"
+    <br>
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="4">
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="5">
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="6">
+    <input type="button" name="" id="" value="-" style="padding: 12px 32px; font-size: 50px;">
+    <br>
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="1">
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="2">
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="3">
+    <input type="button" name="" id="" value="+" style="padding: 12px 26px; font-size: 50px;">
+    <br>
+    <input type="button" name="" id="" value="^" style="padding: 10px 32px; font-size: 50px;">
+
+
+
+    <input type="button" onclick="btnclick(this)" name="" id="a" value="0">
+    <input type="button" name="" id="" value="." style="padding: 10px 37px; font-size: 52px;">
+    <input type="button" name="" id="" value="%" style="padding: 12px 19px; font-size: 50px;">
+</div>
+</div>
+<script>
+     var result;
+    var num1;
+    var num2;
+    var op;
+    
+    function btnclick(btn){
+        document.getElementById("box").value=document.getElementById("box").value+btn.value;
+
+
+
+
+    } 
+        function opclick(btn){
+     var num1= document.getElementById("box").value;
+     document.getElementById("box").value="";
+     if(btn.value=="+"){
+ 
+        var num2=document.getElementById("box").value;
+
+        result=Number(num1)+Number(num2);
+
+document.getElementById("box").value=result;
+     }
+
+
+
+    }
+</script>
+</body>
+</html>
