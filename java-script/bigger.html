@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biggest No.</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Enter First no.</th>
+            <td><input type="text" id="txtfirst"></td>
+        </tr>
+        <tr>
+            <th>Enter Second no.</th>
+            <td><input type="text" id="txtsecond"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+            <input type="button" value="Check the Biggest" id="btncheck">
+        </tr>
+        <tr>
+            <td colspan="2"><h2 id="result"></h2></td>
+        </tr>
+    </table>
+    <script>
+        function btn_check()
+        {
+            var x=Number(document.getElementById("txtfirst").value);
+            var y=Number(document.getElementById("txtsecond").value);
+            if(x>y)
+            {
+                document.getElementById("result").innerHTML="First no. is bigger"
+            }
+            else{
+                document.getElementById("result").innerHTML="Second no. is bigger"
+
+            }
+        }
+        var check=document.getElementById("btncheck");
+        check.addEventListener("click",btn_check);
+
+    </script>
+</body>
+</html>

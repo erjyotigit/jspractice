@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit or Loss</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Enter Cost price</th>
+            <td><input type="text" id="txtcost"></td>
+        </tr>
+        <tr>
+            <th>Enter Sale price</th>
+            <td><input type="text" id="txtsale"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+            <input type="button" value="Calculate" id="btncal">
+        </tr>
+        <tr>
+            <td colspan="2"><h2 id="result"></h2></td>
+        </tr>
+    </table>
+    <script>
+        function btncalculate()
+        {
+            var cp=Number(document.getElementById("txtcost").value);
+            var sp=Number(document.getElementById("txtsale").value);
+            if(cp>sp)
+            {
+                document.getElementById("result").innerHTML="Loss Occured";
+
+            }
+            else
+            {
+                document.getElementById("result").innerHTML="Profit Occured";
+            }
+
+        }
+        var res=document.getElementById("btncal");
+        res.addEventListener("click",btncalculate);
+    </script>
+</body>
+</html>
